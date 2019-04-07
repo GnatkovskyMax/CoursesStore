@@ -48,8 +48,13 @@ class User
      */
     private $course;
 
-    public function __construct()
+    public function __construct($email, $password, $image, $firstName, $lastName)
     {
+        $this->email=$email;
+        $this->password=$password;
+        $this->image=$image;
+        $this->firstName=$firstName;
+        $this->lastName=$lastName;
         $this->course = new ArrayCollection();
     }
 

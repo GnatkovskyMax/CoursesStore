@@ -58,8 +58,17 @@ class Course
      */
     private $lessons;
 
-    public function __construct()
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $slug;
+
+    public function __construct($title, $description, $public=0, $slug)
     {
+        $this->title=$title;
+        $this->description=$description;
+        $this->public=$public;
+        $this->slug=$slug;
         $this->users = new ArrayCollection();
         $this->lessons = new ArrayCollection();
     }
@@ -196,6 +205,18 @@ class Course
                 $lesson->setCategory(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+        $this->slug = $slug;
 
         return $this;
     }

@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Course\Repository\CourseRepositoryInterface;
 use App\Entity\Course;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Symfony\Bridge\Doctrine\RegistryInterface;
@@ -12,13 +13,17 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
  * @method Course[]    findAll()
  * @method Course[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class CourseRepository extends ServiceEntityRepository
+class CourseRepository extends ServiceEntityRepository implements CourseRepositoryInterface
 {
     public function __construct(RegistryInterface $registry)
     {
         parent::__construct($registry, Course::class);
     }
 
+    public function findBySlug(string $slug): ?Course
+    {
+        // TODO: Implement findBySlug() method.
+    }
     // /**
     //  * @return Course[] Returns an array of Course objects
     //  */
@@ -47,4 +52,5 @@ class CourseRepository extends ServiceEntityRepository
         ;
     }
     */
+
 }
