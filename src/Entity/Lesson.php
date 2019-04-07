@@ -21,12 +21,14 @@ class Lesson
      */
     private $title;
 
-    public function __construct($title, $slug, $description, $video)
+    public function __construct($title, $slug, $description, $video, $category)
     {
         $this->title=$title;
         $this->slug=$slug;
         $this->description=$description;
         $this->video=$video;
+        $this->category= $category;
+
 
     }
 

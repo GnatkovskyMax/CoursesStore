@@ -13,7 +13,6 @@ class IndexController extends AbstractController
      * @Route("/")
      */
     public function actionIndex(){
-        //$courses=
         //return $this->render('index.html.twig');
     }
 }

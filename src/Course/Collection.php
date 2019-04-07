@@ -2,6 +2,7 @@
 
 namespace App\Course;
 
+
 final class Collection implements \IteratorAggregate
 {
     private $courses;
@@ -11,7 +12,7 @@ final class Collection implements \IteratorAggregate
         $this->courses = $courses;
     }
 
-    public function addCategory(CourseModel $category): void
+    public function addCourse(CourseModel $courses): void
     {
         $this->courses[] = $courses;
     }

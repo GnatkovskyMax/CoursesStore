@@ -2,11 +2,11 @@
 
 namespace App\Course;
 
-use App\Entity\Category;
+use App\Entity\Course;
 
 final class CourseMapper
 {
-    public static function entityToModel(Category $entity): CourseModel
+    public static function entityToModel(Course $entity): CourseModel
     {
         $model = new CourseModel(
             $entity->getId(),
